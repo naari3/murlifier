@@ -1164,6 +1164,10 @@ doublearray@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/doublearray/-/doublearray-0.0.2.tgz#63186fe8d34413276d3621f6aa0ec5f79e227ef9"
 
+each-cons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/each-cons/-/each-cons-1.0.0.tgz#ebf42b6cc6e11993d55c3848cb9ab57d906cf4f1"
+
 ecc-jsbn@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz#0fc73a9ed5f0d53c38193398523ef7e543777505"
