@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import kuromoji from "kuromoji";
 
 const builder = kuromoji.builder({
@@ -7,9 +8,7 @@ const builder = kuromoji.builder({
 const murlify = sentence => {
   return new Promise((resolve, reject) => {
     builder.build((err, tokenizer) => {
-      if (err) {
-        reject(err);
-      }
+      if (err) reject(err);
 
       const tokens = tokenizer.tokenize(sentence);
 
@@ -30,6 +29,4 @@ const murlizedWord = token => {
   }
 };
 
-murlify("それは違うんじゃないか？だって今日は神社閉店の日なんだよ。").then(
-  sentence => console.log(sentence)
-);
+export default murlify;
