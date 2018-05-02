@@ -1,10 +1,11 @@
 {
   "name": "murlify",
   "version": "0.0.1",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "build": "babel src --out-dir lib"
   },
   "lint-staged": {
     "*.js": [
