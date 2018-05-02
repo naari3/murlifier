@@ -8,7 +8,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "prettier-eslint --write",
+      "eslint",
       "git add"
     ]
   },
@@ -22,5 +23,8 @@
     "lint-staged": "^7.0.5",
     "prettier": "^1.12.1"
   },
-  "author": "naari3 <naari.named@gmail.com>"
+  "author": "naari3 <naari.named@gmail.com>",
+  "dependencies": {
+    "kuromoji": "^0.1.2"
+  }
 }
