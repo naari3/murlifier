@@ -1,9 +1,11 @@
 import kuromoji from "kuromoji";
 import eachCons from "each-cons";
+import path from "path";
 
-const builder = kuromoji.builder({
-  dicPath: "node_modules/kuromoji/dict"
-});
+const kuromojiRoot = path.dirname(require.resolve("kuromoji/package"));
+const dicPath = path.join(kuromojiRoot, "dict") + path.sep;
+
+const builder = kuromoji.builder({ dicPath });
 
 const murlify = sentence => {
   return new Promise((resolve, reject) => {
@@ -44,4 +46,4 @@ const murlizedWord = token => {
   }
 };
 
-export default murlify;
+module.exports = murlify;
