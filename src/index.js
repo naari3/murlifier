@@ -7,7 +7,7 @@ const kuromojiRoot = path.dirname(require.resolve("kuromoji/package"));
 class Murlifier {
   constructor(dicPath) {
     this.dicPath = dicPath || path.join(kuromojiRoot, "dict") + path.sep;
-    this.tokenizer = new Promise((resolve, rerject) => {
+    this.tokenizer = new Promise((resolve, reject) => {
       const builder = kuromoji.builder({ dicPath: this.dicPath });
       builder.build((error, tokenizer) => {
         if (error) {
