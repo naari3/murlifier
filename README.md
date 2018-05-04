@@ -1,3 +1,4 @@
 # murlify
 
-![screencast 2018-05-04 10-14-02](https://user-images.githubusercontent.com/12756563/39609585-f40e0d32-4f84-11e8-82ef-1642c4e7be12.gif)
+![screencast 2018-05-04 10-25-03](https://user-images.githubusercontent.com/12756563/39609663-95629388-4f85-11e8-84ac-fcaa03c6d176.gif)
+
