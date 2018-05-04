@@ -33,7 +33,11 @@ class Murlifier {
       .concat([[tokens[tokens.length - 1]]])
       .map(biTokens => {
         if (biTokens.length === 1 || biTokens[1].pos === "記号") {
-          if (["助動詞", "形容詞", "動詞"].indexOf(biTokens[0].pos) >= 0) {
+          if (
+            ["助動詞", "形容詞"].indexOf(biTokens[0].pos) >= 0 ||
+            (biTokens[0].pos === "動詞" &&
+              biTokens[0].conjugated_form === "基本形")
+          ) {
             biTokens[0].surface_form += "ゾ";
           }
           return biTokens[0];
