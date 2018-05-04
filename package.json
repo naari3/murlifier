@@ -1,6 +1,6 @@
 {
   "name": "murlify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "japanese",
     "meme",
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "each-cons": "^1.0.0",
     "eslint": "^4.19.1",

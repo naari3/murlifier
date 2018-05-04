@@ -1,4 +1,3 @@
-import "babel-polyfill";
 import kuromoji from "kuromoji";
 import eachCons from "each-cons";
 
