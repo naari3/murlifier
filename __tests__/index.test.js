@@ -12,4 +12,9 @@ describe("murlifier", () => {
     const data = await murlifier.murlify(sentence);
     expect(data).toEqual("てゅわぁぁぁ！忘れてたゾ！");
   });
+  it("文の最後の動詞の後にゾを付与する", async () => {
+    const sentence = "急いでいるので走る";
+    const data = await murlifier.murlify(sentence);
+    expect(data).toEqual("急いでいるので走るゾ");
+  });
 });
