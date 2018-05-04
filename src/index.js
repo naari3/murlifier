@@ -11,7 +11,7 @@ class Murlifier {
       const builder = kuromoji.builder({ dicPath: this.dicPath });
       builder.build((error, tokenizer) => {
         if (error) {
-          return reject(errror);
+          return reject(error);
         }
         return resolve(tokenizer);
       });
