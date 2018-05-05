@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest",
     "precommit": "lint-staged",
-    "build": "babel src --out-dir lib"
+    "build": "NODE_ENV=production babel src --out-dir lib --source-maps"
   },
   "lint-staged": {
     "*.js": [
