@@ -32,18 +32,12 @@ class Murlifier {
     return eachCons(tokens, 2)
       .concat([[tokens[tokens.length - 1]]])
       .map(biTokens => {
-        if (biTokens.length === 1 || biTokens[1].pos === "記号") {
-          if (
-            ["助動詞", "形容詞"].indexOf(biTokens[0].pos) >= 0 ||
-            (biTokens[0].pos === "動詞" &&
-              biTokens[0].conjugated_form === "基本形")
-          ) {
+        if (this.isLastToken(biTokens)) {
+          if (this.isAddableMurWord(biTokens)) {
             biTokens[0].surface_form += "ゾ";
           }
-          return biTokens[0];
-        } else {
-          return biTokens[0];
         }
+        return biTokens[0];
       });
   }
 
@@ -57,6 +51,20 @@ class Murlifier {
     } else {
       return token.surface_form;
     }
+  }
+
+  isLastToken(biTokens) {
+    return (
+      biTokens.length === 1 ||
+      (biTokens[1].pos === "記号" && biTokens[1].pos_detail_1 !== "読点")
+    );
+  }
+
+  isAddableMurWord(biTokens) {
+    return (
+      ["助動詞", "形容詞"].indexOf(biTokens[0].pos) >= 0 ||
+      (biTokens[0].pos === "動詞" && biTokens[0].conjugated_form === "基本形")
+    );
   }
 }
 
