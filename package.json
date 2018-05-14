@@ -38,6 +38,7 @@
   },
   "author": "naari3 <naari.named@gmail.com>",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "each-cons": "^1.0.0",
     "kuromoji": "^0.1.2"
   }
