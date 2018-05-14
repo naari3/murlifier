@@ -30,16 +30,14 @@ class Murlifier {
   }
 
   tokensToMurTokens(tokens) {
-    return eachCons(tokens, 2)
-      .concat([[tokens[tokens.length - 1]]])
-      .map(biTokens => {
-        if (this.isLastToken(biTokens)) {
-          if (this.isAddableMurWord(biTokens)) {
-            biTokens[0].surface_form += "ゾ";
-          }
+    return tokens.map(token => {
+      if (this.isLastToken(token, tokens)) {
+        if (this.isAddableMurWord(token)) {
+          token.surface_form += "ゾ";
         }
-        return biTokens[0];
-      });
+      }
+      return token;
+    });
   }
 
   tokensToMurSentence(tokens) {
@@ -54,17 +52,21 @@ class Murlifier {
     }
   }
 
-  isLastToken(biTokens) {
-    return (
-      biTokens.length === 1 ||
-      (biTokens[1].pos === "記号" && biTokens[1].pos_detail_1 !== "読点")
-    );
+  isLastToken(targetToken, allTokens) {
+    const nextToken = this.findNextToken(targetToken, allTokens);
+    if (nextToken === undefined) return true;
+
+    return nextToken.pos === "記号" && nextToken.pos_detail_1 !== "読点";
   }
 
-  isAddableMurWord(biTokens) {
+  findNextToken(targetToken, allTokens) {
+    return allTokens[allTokens.indexOf(targetToken) + 1];
+  }
+
+  isAddableMurWord(token) {
     return (
-      ["助動詞", "形容詞"].indexOf(biTokens[0].pos) >= 0 ||
-      (biTokens[0].pos === "動詞" && biTokens[0].conjugated_form === "基本形")
+      ["助動詞", "形容詞"].indexOf(token.pos) >= 0 ||
+      (token.pos === "動詞" && token.conjugated_form === "基本形")
     );
   }
 }
