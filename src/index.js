@@ -1,6 +1,5 @@
 import kuromoji from "kuromoji";
 import "babel-polyfill";
-import eachCons from "each-cons";
 import path from "path";
 
 const kuromojiRoot = path.dirname(require.resolve("kuromoji/package"));
