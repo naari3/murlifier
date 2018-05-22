@@ -5,9 +5,11 @@ transform Japanesen sentences to MUR sentences
 ## How to use
 
 ```javascript
-import murlify from 'murlify'
+import Murlifier from 'murlifier'
 
-murlify('肝心な所洗い忘れてるよ').then(sentence => {console.log(sentence)})
+const murlifier = new Murlifier();
+
+murlifier.murlify('肝心な所洗い忘れてるよ').then(sentence => {console.log(sentence)});
 // -> 肝心な所洗い忘れてるゾ
 ```
 
