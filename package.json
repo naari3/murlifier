@@ -13,7 +13,6 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "precommit": "lint-staged",
     "build": "NODE_ENV=production babel src --out-dir lib --source-maps",
     "clean": "rm -rf lib"
   },
@@ -25,8 +24,11 @@
     ]
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-preset-env": "1.7.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
     "eslint": "5.13.0",
     "eslint-config-prettier": "4.0.0",
     "eslint-plugin-prettier": "3.0.1",
@@ -39,7 +41,12 @@
   },
   "author": "naari3 <naari.named@gmail.com>",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
+    "@babel/polyfill": "^7.2.5",
     "kuromoji": "^0.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
