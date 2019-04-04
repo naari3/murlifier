@@ -7,3 +7,10 @@ steps:
   commands:
   - npm install
   - npm test
+  - touch aahe
+
+- name: test2
+  image: node
+  commands:
+  - ls -al
+  - pwd
