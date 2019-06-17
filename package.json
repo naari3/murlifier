@@ -37,7 +37,7 @@
     "lint-staged": "8.2.1",
     "prettier": "1.18.2",
     "prettier-eslint": "9.0.0",
-    "prettier-eslint-cli": "4.7.1"
+    "prettier-eslint-cli": "5.0.0"
   },
   "author": "naari3 <naari.named@gmail.com>",
   "dependencies": {
