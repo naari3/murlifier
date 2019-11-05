@@ -1,0 +1,37 @@
+name: Test
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Cache node_modules
+      uses: actions/cache@preview
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-projectname-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        restore-keys:
+          ${{ runner.os }}-projectname-
+    - name: Install
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn install
+    - name: Build
+      run: yarn build
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Cache node_modules
+      uses: actions/cache@preview
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-projectname-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        restore-keys:
+          ${{ runner.os }}-projectname-
+    - name: Install
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn install
+    - name: Test
+      run: yarn test
