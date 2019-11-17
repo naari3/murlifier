@@ -36,7 +36,7 @@
     "jest": "24.9.0",
     "lint-staged": "9.4.3",
     "prettier": "1.19.1",
-    "prettier-eslint": "9.0.0",
+    "prettier-eslint": "9.0.1",
     "prettier-eslint-cli": "5.0.0"
   },
   "author": "naari3 <naari.named@gmail.com>",
