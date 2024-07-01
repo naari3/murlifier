@@ -1,52 +1,23 @@
 {
   "name": "murlifier",
-  "version": "1.0.9",
-  "keywords": [
-    "japanese",
-    "meme",
-    "mur"
-  ],
-  "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
-  "license": "MIT",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "jest",
-    "build": "NODE_ENV=production babel src --out-dir lib --source-maps",
-    "clean": "rm -rf lib"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier-eslint --write",
-      "eslint",
-      "git add"
-    ]
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.8.4",
-    "@babel/preset-env": "7.8.4",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "24.9.0",
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.0",
-    "eslint-plugin-prettier": "3.1.2",
-    "husky": "3.1.0",
-    "jest": "24.9.0",
-    "lint-staged": "10.0.7",
-    "prettier": "1.19.1",
-    "prettier-eslint": "9.0.1",
-    "prettier-eslint-cli": "5.0.0"
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
   },
-  "author": "naari3 <naari.named@gmail.com>",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "kuromoji": "^0.1.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "@biomejs/biome": "^1.8.3",
+    "kuromojin": "^3.0.0"
   }
 }
