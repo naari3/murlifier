@@ -18,6 +18,31 @@
   },
   "dependencies": {
     "@biomejs/biome": "^1.8.3",
-    "kuromojin": "^3.0.0"
+    "kuromoji": "^0.1.2",
+    "kuromojin": "^3.0.0",
+    "vite-plugin-node-stdlib-browser": "^0.2.1"
+  },
+  "module": "./dist/murlifier.js",
+  "types": "./dist/murlifier.d.ts",
+  "author": {
+    "name": "naari3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naari3/murlifier"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/murlifier.js"
+    }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "kuromoji@0.1.2": "patches/kuromoji@0.1.2.patch"
+    }
   }
 }

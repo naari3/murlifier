@@ -2,6 +2,7 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import nodePolyfills from "vite-plugin-node-stdlib-browser";
 
 export default defineConfig({
 	build: {
@@ -12,17 +13,9 @@ export default defineConfig({
 			fileName: "murlifier",
 			formats: ["es"],
 		},
-		// rollupOptions: {
-		//   external: ['vue'],
-		//   output: {
-		//     globals: {
-		//       vue: 'Vue',
-		//     },
-		//   },
-		// },
 	},
 	test: {
 		include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
 	},
-	plugins: [dts({ rollupTypes: true })],
+	plugins: [dts({ rollupTypes: true }), nodePolyfills()],
 });
